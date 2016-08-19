@@ -56,7 +56,8 @@ fun ageDescription(age: Int): String = TODO()
 кирпич 4 х 4 х 4 пройдёт через отверстие 4 х 4.
  */
 
-fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean = TODO()
+fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean =
+    listOf(a, b, c).sorted().take(2).zip(listOf(r, s).sorted()).all { it.first <= it.second }
 
 /*
 Путник двигался t1 часов со скоростью v1 км/час, затем t2 часов — со скоростью v2 км/час
