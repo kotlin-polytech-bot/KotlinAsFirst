@@ -33,7 +33,7 @@ fun dateDigitToStr(digital: String): String = TODO()
  * При неверном формате вернуть пустую строку
  */
 fun flattenPhoneNumber(phone: String): String =
-    if (phone.any { !it.isDigit && ' ' != it && '+' != it && '-' != it && '(' != it && ')' != it }) ""
+    if (phone.any { !it.isDigit() && ' ' != it && '+' != it && '-' != it && '(' != it && ')' != it }) ""
     else phone.filter { it.isDigit() || '+' == it }
 
 /**
