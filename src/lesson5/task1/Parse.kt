@@ -17,6 +17,41 @@ fun timeStrToSeconds(str: String): Int {
     return result
 }
 
+fun twoDigitStr(n: Int) = if (n in 0..9) "0$n" else "$n"
+
+/**
+ * Пример
+ *
+ * Дано seconds -- время в секундах, прошедшее с начала дня.
+ * Вернуть текущее время в виде строки в формате "ЧЧ:ММ:СС".
+ */
+fun timeSecondsToStr(seconds: Int): String {
+    val hour = seconds / 3600
+    val minute = (seconds % 3600) / 60
+    val second = seconds % 60
+    return String.format("%02d:%02d:%02d", hour, minute, second)
+}
+
+/**
+ * Пример: консольный ввод
+ */
+fun main(args: Array<String>) {
+    println("Введите время в формате ЧЧ:ММ:СС")
+    val line = readLine()
+    if (line != null) {
+        val seconds = timeStrToSeconds(line)
+        if (seconds == -1) {
+            println("Введённая строка $line не соответствует формату ЧЧ:ММ:СС")
+        }
+        else {
+            println("Прошло секунд с начала суток: $seconds")
+        }
+    }
+    else {
+        println("Достигнут <конец файла> в процессе чтения строки. Программа прервана")
+    }
+}
+
 /**
  * Средняя
  *
